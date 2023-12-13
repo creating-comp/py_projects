@@ -1,0 +1,46 @@
+import random
+
+#declarations of the project
+words = ["still", "vendetta", "rain", "green", "mile", "nuts", "perseverance"]
+chosen = random.choice(words)
+count = 0  # will go to 3
+letter = ""
+word = [] #add elements through 'letter' then compare with the chosen!
+
+#main project- generating a word by user input
+for i in range(len(chosen)):
+    word.append("_")
+print(f"The words are: {words}")
+print("Input a letter for this word: ")
+print(*word)
+
+#main project- guessing the word letter by letter
+while word != list(chosen):
+    letter = input("\n")
+    found = False
+    for i in range(len(chosen)):
+        if letter == chosen[i]:
+            word[i] = chosen[i]
+            if chosen.count(letter) == 1:
+                print("well done!")
+                print(*word, end="\n")
+                break
+    if letter not in chosen:
+        count += 1
+        print(f"That's a bad try, your count is {count}")
+    if chosen.count(letter) > 1:
+        for j in range(len(chosen)-1, 0, -1):
+            if letter == chosen[j]:
+                word[j] = chosen[j]
+                print("well done!")
+                print(*word, end="\n")
+                break
+            elif letter not in chosen:
+                count += 1
+                print(f"That's a bad try, your count is {count}")
+
+    if count == 3:
+        print("You lost the game bc of the counter, thanks for playing.")
+        break
+    elif word == chosen:
+        print("Correct guess, congrats!")
