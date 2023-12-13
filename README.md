@@ -1,3 +1,7 @@
 # py_projects
-I will include some projects in this repo to keep coding, 
-and first here it is "word guessing game"
+I will include some projects in this repo to keep coding. First, here it is a word-guessing game.
+In this game, there is a list of words present, out of which our interpreter will choose a random word. 
+The user first has to input their names and then, be asked to guess any alphabet. 
+If the random word contains that alphabet, it will be shown as the output(with correct placement)
+else the program will ask you to guess another alphabet. The user will
+be given 3 turns(which can be changed accordingly) to guess the complete word.
